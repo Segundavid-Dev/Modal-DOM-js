@@ -24,3 +24,10 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
 btnCloseModal.addEventListener("click", closeModal);
 //----------- removing modal class by clicking on overlay class-------------//
 overlay.addEventListener("click", closeModal);
+
+//keyboard events are also known as global events
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
+});
